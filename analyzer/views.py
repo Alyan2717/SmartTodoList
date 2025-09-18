@@ -1,8 +1,11 @@
 from django.http import JsonResponse, FileResponse
+from django.shortcuts import render, redirect
+from django.utils.dateparse import parse_datetime
 from django.views.decorators.csrf import csrf_exempt
 import json
 
 from analyzer.helper.taskCSVHandler import TaskCSVHandler
+from analyzer.models.task import Task
 from analyzer.repositories.taskRepository import TaskRepository
 from analyzer.services.taskParser import TaskParser
 from analyzer.services.weatherAPI import WeatherAPI
@@ -101,3 +104,8 @@ def export_tasks_csv(request):
         file_path = TaskCSVHandler.export_tasks()
         return FileResponse(open(file_path, "rb"), as_attachment=True, filename="tasks_export.csv")
     return None
+
+def task_page(request):
+    tasks = TaskRepository.list_tasks()
+    weather = WeatherAPI.get_weather("Berlin")
+    return render(request, "tasks.html", {"tasks": tasks, "weather": weather})

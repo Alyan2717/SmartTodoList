@@ -1,8 +1,14 @@
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
+
 from analyzer import views
 
 # URL Config
 urlpatterns = [
+    path('', views.task_page, name='task_page'),
+
+    # API Postman
     path('tasks/', views.list_tasks, name='list_tasks'),
     path('tasks/get/', views.get_task, name='get_task'),
     path('tasks/add/', views.add_task, name='add_task'),
@@ -12,3 +18,6 @@ urlpatterns = [
     path('tasks/parse/', views.parse_task, name='parse_task'),
     path('tasks/export/csv/', views.export_tasks_csv, name='export_tasks_csv'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
