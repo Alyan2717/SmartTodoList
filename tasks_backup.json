@@ -1,2 +1,23 @@
-ID,Title,Description,Status,DueDate,CreatedAt,UpdatedAt
-1,test_del,test1,0,2025-09-17 00:00:00+00:00,2025-09-17 19:18:44.204242+00:00,2025-09-17 19:18:44.204242+00:00
+[
+    {
+        "id": 1,
+        "title": "Submit your assignment day after tommorow",
+        "description": "",
+        "status": 2,
+        "dueDate": "2025-09-25 00:00:00+00:00"
+    },
+    {
+        "id": 4,
+        "title": "Submit your assignment today",
+        "description": "",
+        "status": 0,
+        "dueDate": "2025-09-21 00:00:00+00:00"
+    },
+    {
+        "id": 5,
+        "title": "Submit file tomorrow",
+        "description": "",
+        "status": 0,
+        "dueDate": "2025-09-22 12:27:59.564193+00:00"
+    }
+]

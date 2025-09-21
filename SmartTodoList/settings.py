@@ -82,10 +82,10 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'textanalyzer_db',  # Your database name
-        'USER': 'root',  # MySQL username
-        'PASSWORD': 'Al-kh@n1234',  # MySQL password
-        'HOST': 'localhost',  # Usually localhost
+        'NAME': 'textanalyzer_db',
+        'USER': 'root',
+        'PASSWORD': '*****',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
